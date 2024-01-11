@@ -1,4 +1,4 @@
-# Outil-de-scan-basique-nmap-et-dirbuster-
+# Outil-de-scan-basique-nmap-et-dirbuster-en script shell
 
 Bonjour, 
 
