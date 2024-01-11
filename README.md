@@ -9,6 +9,7 @@ Pour pouvoir tester ce code, veuillez suivre les instructions suivantes :
 -copiez le code dans script.sh
 -lancez votre machine virtuelle et créez-vous un fichier.sh et copiez le code dedans. 
 -utilisez la commande chmod +x script.sh 
+
 ![image](https://github.com/ZZhenqiu/Outil-de-scan-basique-nmap-et-dirbuster-/assets/141430165/fb916d4e-8776-4049-99a1-c9121899df78)
 
 C'est tout. 
