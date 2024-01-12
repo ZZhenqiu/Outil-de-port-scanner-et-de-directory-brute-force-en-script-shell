@@ -16,7 +16,8 @@ C'est tout.
 
 Voici un exemple d'utilisation du programme (l'addresse IP vient d'un CTF de TryHackMe) : 
 
-![image](https://github.com/ZZhenqiu/Outil-de-scan-basique-nmap-et-dirbuster-/assets/141430165/c3c97807-9f3b-4b3d-bdbc-e8eb9ebf7b20)
+![image](https://github.com/ZZhenqiu/Outil-de-scan-basique-nmap-et-dirbuster-/assets/141430165/18137b5b-90a5-4c14-8215-51184778f412)
+
 
 
 
