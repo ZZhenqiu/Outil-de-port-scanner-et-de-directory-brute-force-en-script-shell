@@ -13,7 +13,6 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-# Si l'utilisateur choisit l'action 1 (Port scanner)
 if [ $# -eq 1 ]; then
     target_ip=$1
     open_ports=false
@@ -28,33 +27,27 @@ if [ $# -eq 1 ]; then
     fi
 fi
 
-# Si l'utilisateur choisit l'action 2 (Directory brute force)
 if [ $# -ge 2 ]; then
     target_url=$1
     wordlist_file=$2
     extensions=$3
 
-    # Vérifie si curl est installé
     if ! command -v curl &> /dev/null; then
         echo -e "\e[33mError: curl is not installed. Please install curl.\e[0m"
         exit 1
     fi
 
-    # Vérifie si le fichier de liste de mots existe
     if [ ! -f "$wordlist_file" ]; then
         echo -e "\e[33mError: Wordlist file not found.\e[0m"
         exit 1
     fi
 
-    # Transforme la chaîne d'extensions en un tableau
     IFS=' ' read -r -a extensions_array <<< "$extensions"
 
-    # Variable pour indiquer si des répertoires ont été trouvés
     found_directories=false
 
-    # Lecture de la liste de mots
     while IFS= read -r directory; do
-        # Si des extensions sont spécifiées, teste chaque répertoire avec ces extensions
+
         if [ -n "$extensions" ]; then
             for extension in "${extensions_array[@]}"; do
                 full_url="$target_url/$directory.$extension"
@@ -66,7 +59,7 @@ if [ $# -ge 2 ]; then
                 fi
             done
         else
-            # Sinon, teste le répertoire lui-même
+
             full_url="$target_url/$directory"
             response_code=$(curl -s -o /dev/null -w "%{http_code}" "$full_url")
 
@@ -77,7 +70,7 @@ if [ $# -ge 2 ]; then
         fi
     done < "$wordlist_file"
 
-    # Affiche un message si aucun répertoire n'a été trouvé
+
     if [ "$found_directories" = false ]; then
         echo -e "\e[33mNo directories found.\e[0m"
     fi
